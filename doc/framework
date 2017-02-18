@@ -1,0 +1,13 @@
+
+#修改web.py db的update方法
+web.py > db.py  887行 修改update方法、传递要修改的key:value
+修改之前
+    " SET " + sqlwhere(values, ', ') +
+修改之后
+    " SET " + sqlwhere(values.get('fields'), ', ') +
+
+之前调用update方法时
+    db.update(tableName, where, name='zhangsan', age=22)
+修改后调用update方法时
+    db.update(tableName, where, fields={'name':'zhangsan', 'age':22})
+

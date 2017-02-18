@@ -1,0 +1,22 @@
+$def with(userList)
+<table class="table">
+    <tr class="info">
+        <th>用户名</th>
+        <th>姓名</th>
+        <th>手机号</th>
+        <th>Email</th>
+        <th>QQ</th>
+        <th>操作</th>
+    </tr>
+    $for user in userList:
+    <tr class="active">
+        <td>$user.username</td>
+        <td>$user.name</td>
+        <td>$user.phone</td>
+        <td>$user.email</td>
+        <td>$user.qq</td>
+        <td><a href="/user/update/$user.user_id">修改</a></td>
+    </tr>
+</table>
+
+$var title: 会员中心

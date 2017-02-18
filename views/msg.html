@@ -1,0 +1,20 @@
+$def with(data)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="http://v3.bootcss.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/assets/css/css.css" rel="stylesheet">
+    <title>消息提示</title>
+</head>
+<body>
+<div class="msg">
+    <h3 class="text-center login-title">验证提示</h3>
+    $if data.get('state') == 1:
+        <p class="bg-success">
+            $for _item in data.get('data'):
+                <span>$_item</span>
+        </p>
+</div>
+</body>
+</html>
